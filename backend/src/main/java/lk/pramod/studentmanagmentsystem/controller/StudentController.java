@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("http://localhost:5174")
+@CrossOrigin("http://localhost:5173")
 @RestController
-@RequestMapping("/api/v1/students")
+@RequestMapping("/students")
 //@RequiredArgsConstructor
 public class StudentController {
 
@@ -28,7 +28,7 @@ public class StudentController {
         return new ResponseEntity<>(studentService.getAllStudents(), HttpStatus.FOUND);
     }
 
-    @PostMapping("add")
+    @PostMapping
     public Student addStudent(@RequestBody Student student) {
         return studentService.addStudent(student);
     }

@@ -9,7 +9,7 @@ import {
 	FaTrashAlt,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Search from "../common/Search";
+import Search from "../comman/Search";
 
 const StudentsView = () => {
 	const [students, setStudents] = useState([]);
@@ -21,7 +21,7 @@ const StudentsView = () => {
 
 	const loadStudents = async () => {
 		const result = await axios.get(
-			"http://localhost:9192/students",
+			"http://localhost:5001/students",
 			{
 				validateStatus: () => {
 					return true;
@@ -35,7 +35,7 @@ const StudentsView = () => {
 
 	const handleDelete = async (id) => {
 		await axios.delete(
-			`http://localhost:9192/students/delete/${id}`
+			`http://localhost:5001/students/delete/${id}`
 		);
 		loadStudents();
 	};
